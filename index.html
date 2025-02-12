@@ -1,94 +1,63 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Simple web page using bootstrap</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        form {
-            position: absolute;
-            right: 0px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
 </head>
-
 <body>
-    <div class="">
-        <nav class="navbar nav navbar-expand-md bg-light">
-            <a class="navbar-brand nav-link" href="#">
-                <img src="CMRIT-LOGO.jpg" height="20px" ,width="20px"> 
-                CMRIT</a>
-            <ul class="collapse navbar-collapse navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link " href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                        programs offered</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">B.Tech</a>
-                        <a class="dropdown-item" href="#">M.Tech</a>
-                        <a class="dropdown-item" href="#">MBA</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
-                </li>
-                <form class="form-inline">
-                    <input type="text" placeholder="Search">
-                    <button class="btn btn-outline-success">Search</button>
-                </form>
-            </ul>
-        </nav>
-    </div>
-    <div class="container-fluid jumbotron">
-        <h1>Hello Students!!!</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ratione, distinctio quos voluptate soluta
-            nihil, animi eveniet hic eaque unde debitis quod, et veniam voluptas aspernatur praesentium quidem nam illo.
-        </p>
-        <button class="btn btn-primary">Learn More</button>
-    </div>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h4>CSE</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ipsum voluptatum assumenda officiis,
-                    temporibus modi! Nihil sint, itaque nulla repudiandae delectus recusandae expedita nesciunt
-                    veritatis aperiam, eum iusto, modi repellendus?</p>
-                <button class="btn btn-info">Learn More</button>
+        <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+                <li class="item1 active"></li>
+                <li class="item2"></li>
+                <li class="item3"></li>
+            </ol>
+            <div class="carousel-inner" role="listitem">
+                <div class="item active">
+                    <img src="1.jpg" height="1000px" width="1000px">
+                </div>
+                <div class="item">
+                    <img src="2.jpg" height="1000px" width="1000px">
+                </div>
+                <div class="item">
+                    <img src="3.jpg" height="1000px" width="1000px">
+                </div>
             </div>
-            <div class="col-md-4">
-                <h4>CSE(AI&ML)</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ipsum, tempora animi,
-                    voluptate corporis cupiditate, odio non beatae maiores quos earum repellendus ea culpa? Culpa
-                    blanditiis consectetur aliquid fugiat.</p>
-                <button class="btn btn-warning">Learn More</button>
-            </div>
-            <div class="col-md-4">
-                <h4>CSE(DS)</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ipsum, tempora animi,
-                    voluptate corporis cupiditate, odio non beatae maiores quos earum repellendus ea culpa? Culpa
-                    blanditiis consectetur aliquid fugiat.</p>
-                <button class="btn btn-danger">Learn More</button>
-            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 
+                <span class="sr.only">Prev</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-    </div>
-    <div class="footer text-center">
-        <p>&copy;Rights 2025</p>
-    </div>
+    </div> 
+    <script>
+        $(document).ready(function(){
+            $("#myCarousel").carousel();
+            $(".item1").click(function(){
+                $("#myCarousel").carousel(0);
+            })
+            $(".item2").click(function(){
+                $("#myCarousel").carousel(1);
+            })
+            $(".item3").click(function(){
+                $("#myCarousel").carousel(2);
+            })
+            $(".left").click(function(){
+                $("#myCarousel").carousel("prev");
+            })
+            $(".right").click(function(){
+                $("#myCarousel").carousel("next");
+            })
+        });
+    </script>
 </body>
-
 </html>
